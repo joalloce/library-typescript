@@ -7,6 +7,11 @@ import {
   Product,
   ProductBuilder,
   Home,
+  WashCycle,
+  RinseCycle,
+  SpinCycle,
+  IdleState,
+  WashingMachine,
 } from "./patterns";
 
 console.log("Singleton");
@@ -34,3 +39,9 @@ const home = new Home();
 home.turnOn();
 home.shutDown();
 home.mute();
+
+console.log("State");
+const washingMachine = new WashingMachine();
+console.log(washingMachine.status());
+washingMachine.changeState(new WashCycle());
+console.log(washingMachine.status());
