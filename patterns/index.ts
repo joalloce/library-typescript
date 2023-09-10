@@ -9,3 +9,4 @@ export {
   IdleState,
   WashingMachine,
 } from "./state";
+export { Coffee, MilkDecorator, SugarDecorator } from "./decorator";

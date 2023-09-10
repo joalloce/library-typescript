@@ -12,8 +12,12 @@ import {
   SpinCycle,
   IdleState,
   WashingMachine,
+  Coffee,
+  MilkDecorator,
+  SugarDecorator,
 } from "./patterns";
 
+console.log("----Patterns-------------------------");
 console.log("Singleton");
 const instance = Singleton.getInstance();
 console.log(instance instanceof Singleton);
@@ -45,3 +49,11 @@ const washingMachine = new WashingMachine();
 console.log(washingMachine.status());
 washingMachine.changeState(new WashCycle());
 console.log(washingMachine.status());
+
+console.log("Decorator");
+const coffee = new Coffee();
+console.log(coffee.cost());
+const coffeeWithMilk = new MilkDecorator(coffee);
+console.log(coffeeWithMilk.cost());
+const coffeeWithMilkAndSugar = new SugarDecorator(coffeeWithMilk);
+console.log(coffeeWithMilkAndSugar.cost());
